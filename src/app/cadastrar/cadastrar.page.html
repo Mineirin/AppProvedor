@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>cadastrar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <input
+    [(ngModel)]="nome"
+    class="form-control my-3"
+    placeholder="Insira o Nome"
+  />
+  <input
+    [(ngModel)]="email"
+    class="form-control my-3"
+    placeholder="Insira o Email"
+  />
+  <input
+    [(ngModel)]="senha"
+    class="form-control my-3"
+    placeholder="Insira a Senha"
+  />
+
+  <ion-item>
+    <ion-label>Nivel</ion-label>
+    <ion-select placeholder="Selecione" [(ngModel)]="nivel">
+      <ion-select-option value="Cliente">Cliente</ion-select-option>
+      <ion-select-option value="Administrador">Administrador</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button *ngIf="!id" color="primary" expand="block" (click)="register()">
+    Salvar
+  </ion-button>
+
+  <ion-button *ngIf="id" color="primary" expand="block" (click)="register()">
+    Editar
+  </ion-button>
+</ion-content>
